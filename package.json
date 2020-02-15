@@ -1,0 +1,44 @@
+{
+  "name": "add-em-up",
+  "version": "1.0.0",
+  "description": "A 12 player 3 teams web-based game, where everything's made up and the points do matter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tirtawr/add-em-up.git"
+  },
+  "author": {
+    "name": "Tirta Rachman",
+    "email": "tirtawening@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Bilal Sehgol",
+      "email": "bs3862@nyu.edu"
+    },
+    {
+      "name": "Christina Dacanay",
+      "email": "cmd494@nyu.edu"
+    },
+    {
+      "name": "Nakamol Jangkamolkulchai",
+      "email": "nj1144@nyu.edu"
+    },
+    {
+      "name": "Tirta Rachman",
+      "email": "twr229@nyu.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tirtawr/add-em-up/issues"
+  },
+  "homepage": "https://github.com/tirtawr/add-em-up#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
