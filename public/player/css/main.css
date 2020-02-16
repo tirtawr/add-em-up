@@ -7,9 +7,21 @@
     background-color: #99D9EA;
     padding:30px;
 }
-#instructions-container{
-    background-color: #D9534F; 
-    padding:20px;
+#title-banner{
+    margin-top: 500px;
+    margin-bottom: 50px;
+}
+.banner-text{
+    font-family:flappyFont;
+    font-size: 10em;
+    text-align: center;
+    padding-bottom:10px;
+}
+.game-text{
+    font-family:flappyFont;
+    font-size: 6em;
+    text-align: center;
+    padding-bottom:10px;
 }
 .game-box{
     margin: 0px auto;
@@ -20,10 +32,25 @@ canvas{
     background-color:#000;
     border:2px solid green;
 }
-.btn-restart-game{
+.btn-select-team{
     font-family:flappyFont;
     text-align: center;
-    font-size: 25px;
+    font-size: 10em;
+    margin-top: 20px;
+    width: 80%;
+}
+.keypad-row{
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn-keypad{
+    font-family: flappyFont;
+    text-align: center;
+    font-size: 10em;
+    min-width: 1.5em;
+    margin: 24px;
+    display: table-cell;
 }
 .outer {
     background-color: #99D9EA;

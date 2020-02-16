@@ -7,35 +7,54 @@
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <meta charset="utf-8" />
 </head>
 <body>
-    <script src="playerSketch.js"></script>
+    <div id="sketch-holder"><!-- Our sketch will go here! --></div>
     <div class="outer">
-        <div class="middle">
             <div class="inner">
-
-                <div id="main-container">
-                    <span class="center-block"
-                        style="font-family:flappyFont;font-size: 55px;text-align: center;padding-bottom:10px;">Add Em Up</span>
-                    <div>
-                        <br>
-                        <button id="restart-button" type="button"
-                            class="btn btn-danger btn-lg center-block btn-restart-game"
-                            onclick="register(1);">Team 1</button>
-                        <br/>
-                        <button id="restart-button" type="button" class="btn btn-danger btn-lg center-block btn-restart-game"
-                            onclick="register(2);">Team 2</button>
-                        <br/>
-                        <button id="restart-button" type="button" class="btn btn-danger btn-lg center-block btn-restart-game"
-                            onclick="register(3);">Team 3</button>
-                        <br/>
+            <div id="main-container">
+                <div id="title-banner">
+                    <span class="center-block banner-text">Add Em Up</span>
+                </div>
+                <div id="login-buttons">
+                    <br>
+                    <button type="button"
+                        class="btn btn-danger btn-lg center-block btn-select-team"
+                        onclick="register(1);">Team 1</button>
+                    <br/>
+                    <button type="button" class="btn btn-danger btn-lg center-block btn-select-team"
+                        onclick="register(2);">Team 2</button>
+                    <br/>
+                    <button type="button" class="btn btn-danger btn-lg center-block btn-select-team"
+                        onclick="register(3);">Team 3</button>
+                    <br/>
+                </div>
+                <div id="keypad">
+                    <div class="keypad-row">
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(1);">1</button>
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(2);">2</button>
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(3);">3</button>
                     </div>
+                    <div class="keypad-row">
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(4);">4</button>
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(5);">5</button>
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(6);">6</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(7);">7</button>
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(8);">8</button>
+                        <button type="button" class="btn btn-danger btn-lg btn-keypad" onclick="submit(9);">9</button>
+                    </div>
+                </div>
+                <div id="splash-text">
+                    <span class="center-block game-text">Ok, chill out for a bit...</span>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="playerSketch.js"></script>
 </body>
 
 </html>
