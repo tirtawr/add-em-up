@@ -25,7 +25,7 @@ $(document).ready(function () {
         
     }
 
-    setInterval(refreshStatusReport, 500);
+    setInterval(refreshStatusReport, 100);
 
 });
 

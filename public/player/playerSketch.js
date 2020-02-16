@@ -18,6 +18,7 @@ $(document).ready(function () {
                 break;
             case 'KEYPAD':
                 currentDisplayState = 'KEYPAD'
+                startCountDown()
                 updateDisplay()
                 break;
             case 'END_GAME':
@@ -43,6 +44,21 @@ $(document).ready(function () {
         socket.emit('submit', { submittedNumber: submittedNumber })
         currentDisplayState = 'SPLASH'
         updateDisplay()
+    }
+
+    function startCountDown() {
+        let distance = 5000;
+        $("#countdown").html(5)
+        let interval = setInterval(() => {
+            distance -= 1000
+            const seconds = Math.floor(distance / 1000);
+            $("#countdown").html(seconds)
+
+            if (distance <= 0) {
+                clearInterval(interval);
+                $("#countdown").html('Add Em Up')
+            }
+        }, 950); //make it a little bit faster just to be safe
     }
 
     function updateDisplay() {
