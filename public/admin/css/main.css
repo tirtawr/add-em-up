@@ -1,0 +1,73 @@
+@font-face {
+    font-family: flappyFont;
+    src: url(assets/flappyFont.TTF);
+}
+#main-container{
+    width: 100%;
+    background-color: #99D9EA;
+    padding:30px;
+}
+#title-banner{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#status-report{
+    font-family: 'Source Code Pro', monospace;
+}
+.banner-text{
+    font-family:flappyFont;
+    font-size: 3em;
+    text-align: center;
+    padding-bottom:10px;
+}
+.game-text{
+    font-family:flappyFont;
+    font-size: 1em;
+    text-align: center;
+    padding-bottom:10px;
+}
+.game-box{
+    margin: 0px auto;
+    display: relative;
+    width: 70%;
+}
+canvas{
+    background-color:#000;
+    border:2px solid green;
+}
+.btn-select-team{
+    font-family:flappyFont;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+    width: 80%;
+}
+.keypad-row{
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn-keypad{
+    font-family: flappyFont;
+    text-align: center;
+    font-size: 2em;
+    min-width: 1.5em;
+    margin: 24px;
+    display: table-cell;
+}
+.outer {
+    background-color: #99D9EA;
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: /*whatever width you want*/;
+}

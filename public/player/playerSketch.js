@@ -12,16 +12,16 @@ $(document).ready(function () {
     socket.on('instruction', function (message) {
         const instruction = message.instruction;
         switch (instruction) {
-            case 'splash':
+            case 'SPLASH':
                 currentDisplayState = 'SPLASH'
                 updateDisplay()
                 break;
-            case 'keypad':
+            case 'KEYPAD':
                 currentDisplayState = 'KEYPAD'
                 updateDisplay()
                 break;
-            case 'game-over':
-                currentDisplayState = 'GAME_OVER'
+            case 'END_GAME':
+                currentDisplayState = 'END_GAME'
                 updateDisplay()
                 break;
             default:
@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     register = function (teamNumber) {
         socket.emit('register', { team: teamNumber })
-        currentDisplayState = 'KEYPAD'
+        currentDisplayState = 'SPLASH'
         updateDisplay()
     }
 
@@ -57,7 +57,7 @@ $(document).ready(function () {
             case 'SPLASH':
                 $("#splash-text").show()
                 break;
-            case 'GAME_OVER':
+            case 'END_GAME':
                 $("#game-over-text").show()
                 break;
             default:

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <script type="text/javascript" src="libs/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="libs/underscore-min.js"></script>
+    <script type="text/javascript" src="libs/backbone-min.js"></script>
+    <script src="http://warfares.github.io/pretty-json/pretty-json-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="sketch-holder"><!-- Our sketch will go here! --></div>
+    <div class="outer">
+            <div class="inner">
+            <div id="main-container">
+                <div id="title-banner">
+                    <span class="center-block banner-text">Add Em Up - Admin</span>
+                </div>
+                <div id="login-buttons">
+                    <br>
+                    <button type="button"
+                        class="btn btn-danger btn-lg center-block btn-select-team"
+                        onclick="sendInstruction('END_GAME');">End Game</button>
+                    <br/>
+                    <button type="button" class="btn btn-danger btn-lg center-block btn-select-team"
+                        onclick="sendInstruction('START_TURN');">Start Turn</button>
+                    <br/>
+
+                </div>
+                <div id="status-report">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="adminSketch.js"></script>
+</body>
+
+</html>
