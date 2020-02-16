@@ -3,6 +3,8 @@ class GameService {
     constructor() {
         this.players = {};
         this.currentStage = 'IDLE'
+        this.currentRound = -1
+        this.currentTurn = -1
     }
 
     register(player) {

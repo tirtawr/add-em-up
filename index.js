@@ -50,6 +50,29 @@ app.get('/status', function(req, res) {
     res.json(gameService.getAllStatus())
 })
 
+app.get('/splash', function (req, res) {
+	playerSockets.emit('instruction', {
+		instruction: 'splash'
+	});
+	res.send('ok, splash')
+})
+
+app.get('/keypad', function (req, res) {
+	playerSockets.emit('instruction', {
+		instruction: 'keypad'
+	});
+	res.send('ok, keypad')
+})
+
+app.get('/game-over', function (req, res) {
+	playerSockets.emit('instruction', {
+		instruction: 'game-over'
+	});
+	res.send('ok, game-over')
+})
+
+	
+
 app.use(express.static('public'))
 
 server.listen(port, () => console.log(`Express app listening on port ${port}!`))
