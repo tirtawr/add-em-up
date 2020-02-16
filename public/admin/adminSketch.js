@@ -20,6 +20,14 @@ $(document).ready(function () {
         socket.emit('instruction', { instruction: instruction })
     }
 
+    addScore = function (teamNumber) {
+        socket.emit('score-adjustment', { teamNumber: teamNumber, amount: 1 })
+    }
+
+    subtractScore = function (teamNumber) {
+        socket.emit('score-adjustment', { teamNumber: teamNumber, amount: -1 })
+    }
+
     refreshStatusReport = function() {
         socket.emit('status-request', '')
         

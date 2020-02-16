@@ -29,10 +29,22 @@
                         class="btn btn-danger btn-lg center-block btn-select-team"
                         onclick="sendInstruction('END_GAME');">End Game</button>
                     <br/>
-                    <button type="button" class="btn btn-danger btn-lg center-block btn-select-team"
+                    <button type="button" class="btn btn-success btn-lg center-block btn-select-team"
                         onclick="sendInstruction('START_TURN');">Start Turn</button>
                     <br/>
 
+                </div>
+                <div id="keypad">
+                    <div class="keypad-row">
+                        <button type="button" class="btn btn-warning btn-lg btn-keypad" onclick="addScore(1);">Add 1</button>
+                        <button type="button" class="btn btn-warning btn-lg btn-keypad" onclick="addScore(2);">Add 2</button>
+                        <button type="button" class="btn btn-warning btn-lg btn-keypad" onclick="addScore(3);">Add 3</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button type="button" class="btn btn-warning btn-lg btn-keypad" onclick="subtractScore(1);">Sub 1</button>
+                        <button type="button" class="btn btn-warning btn-lg btn-keypad" onclick="subtractScore(2);">Sub 2</button>
+                        <button type="button" class="btn btn-warning btn-lg btn-keypad" onclick="subtractScore(3);">Sub 3</button>
+                    </div>
                 </div>
                 <div id="status-report">
                     

@@ -4,9 +4,17 @@ class GameService {
         this.players = {};
         this.currentStage = 'IDLE'
         this.currentTurn = 0
-
+        this.scores = {
+            1: 0,
+            2: 0,
+            3: 0
+        }
         this.TURN_DURATION = 5000
         this.MAX_TURNS_PER_ROUND = 3
+    }
+
+    adjustScore(teamNumber, amount) {
+        this.scores[teamNumber] += amount
     }
 
     register(player) {
@@ -50,6 +58,7 @@ class GameService {
             'current_turn_in_round': ((this.currentTurn - 1) % this.MAX_TURNS_PER_ROUND) + 1,
             'current_turn_total': this.currentTurn,
             'player_count': Object.keys(this.players).length,
+            'scores': this.scores,
             'players': this.players
         }
     }

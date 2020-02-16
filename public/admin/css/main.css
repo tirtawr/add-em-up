@@ -52,7 +52,7 @@ canvas{
     text-align: center;
     font-size: 2em;
     min-width: 1.5em;
-    margin: 24px;
+    margin: 4px;
     display: table-cell;
 }
 .outer {

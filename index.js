@@ -72,6 +72,12 @@ adminSockets.on('connection', function (adminSocket) {
 		}
 	})
 
+	adminSocket.on('score-adjustment', function (data) {
+		const teamNumber = data.teamNumber
+		const amount = data.amount
+		gameService.adjustScore(teamNumber, amount)
+	})
+
 	adminSocket.on('status-request', function (data) {
 		adminSockets.emit('status-response', gameService.getAllStatus());
 	})
