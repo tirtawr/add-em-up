@@ -1,0 +1,43 @@
+@font-face {
+    font-family: flappyFont;
+    src: url(assets/flappyFont.TTF);
+}
+#main-container{
+    width: 100%;
+    background-color: #99D9EA;
+    padding:30px;
+}
+#instructions-container{
+    background-color: #D9534F; 
+    padding:20px;
+}
+.game-box{
+    margin: 0px auto;
+    display: relative;
+    width: 70%;
+}
+canvas{
+    background-color:#000;
+    border:2px solid green;
+}
+.btn-restart-game{
+    font-family:flappyFont;
+    text-align: center;
+    font-size: 25px;
+}
+.outer {
+    background-color: #99D9EA;
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: /*whatever width you want*/;
+}
