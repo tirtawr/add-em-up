@@ -1,7 +1,6 @@
 $(document).ready(function () {
-    let socket = io('/dashboard')
-
     
+    let socket = io('/dashboard')
 
     socket.on('status-response', function (status) {
         window.gameState = status
@@ -81,5 +80,12 @@ $(document).ready(function () {
 
     setInterval(refreshStatusReport, 100);
 
+
+    window.onclick = function (event) {
+        // Play background music
+        const backgroundMusic = document.getElementById("backgroundMusic")
+        backgroundMusic.loop = true
+        backgroundMusic.play()
+    }
 });
 
