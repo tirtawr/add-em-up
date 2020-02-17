@@ -2,13 +2,142 @@
 <html lang="en">
 
 <head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <meta charset="utf-8" />
 </head>
 
 <body>
-    <script src="sketch.js"></script>
+    <div id="sketch-holder">
+        <!-- Our sketch will go here! -->
+    </div>
+    <div class="outer">
+        <div class="inner">
+            <div id="main-container">
+                <div id="title-banner">
+                    <span class="center-block banner-text">Add Em Up</span>
+                </div>
+                <div class="container">
+                    <span id="current-target" class="center-block">Target: 67</span>
+                </div>
+                <div class="container team-grid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div>
+                                <span id="point-text-1" class="center-block point-text">★★☆☆☆</span>
+                            </div>
+                            <div>
+                                <span id="running-total-text-1" class="center-block running-total-text">30</span>
+                            </div>
+                            <div>
+                                <span class="center-block team-text">Team 1</span>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div> 
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <span id="point-text-2" class="center-block point-text">★★☆☆☆</span>
+                            </div>
+                            <div>
+                                <span id="running-total-text-2" class="center-block running-total-text">30</span>
+                            </div>
+                            <div>
+                                <span class="center-block team-text">Team 2</span>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <span id="point-text-3" class="center-block point-text">★★☆☆☆</span>
+                            </div>
+                            <div>
+                                <span id="running-total-text-3" class="center-block running-total-text">30</span>
+                            </div>
+                            <div>
+                                <span class="center-block team-text">Team 1</span>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="sub-row">
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">1</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">2</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">3</button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-sub">4</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dashboardSketch.js"></script>
 </body>
 
 </html>

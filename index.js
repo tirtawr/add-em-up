@@ -33,12 +33,17 @@ playerSockets.on('connection', function (playerSocket) {
 	})
 })
 
+// Admin Socket
+let dashboardSockets = io.of('/dashboard')
+dashboardSockets.on('connection', function (dashboardSocket) {
+	console.log('An dashboard client connected: ' + dashboardSocket.id)
 
-// Status Socket
-let statusSockets = io.of('/status')
-statusSockets.on('connection', function (statusSocket) {
-	statusSocket.on('status-request', function (data) {
-		statusSockets.emit('status-response', gameService.getAllStatus());
+	dashboardSocket.on('status-request', function (data) {
+		dashboardSockets.emit('status-response', gameService.getAllStatus());
+	})
+
+	dashboardSocket.on('disconnect', function () {
+		console.log('An dashboard client has disconnected ' + dashboardSocket.id)
 	})
 })
 

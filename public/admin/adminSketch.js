@@ -29,8 +29,7 @@ $(document).ready(function () {
     }
 
     refreshStatusReport = function() {
-        socket.emit('status-request', '')
-        
+        socket.emit('status-request', '')  
     }
 
     setInterval(refreshStatusReport, 100);
