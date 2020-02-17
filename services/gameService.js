@@ -9,7 +9,7 @@ class GameService {
             team_2: 0,
             team_3: 0
         }
-        this.TURN_DURATION = 7000
+        this.TURN_DURATION = 8000 // turn duration one second longer on server for stability
         this.MAX_TURNS_PER_ROUND = 3
         this.POSSIBLE_TARGETS = [13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109]
 

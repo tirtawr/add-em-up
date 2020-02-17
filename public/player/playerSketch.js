@@ -11,18 +11,19 @@ $(document).ready(function () {
     // Receive message from server
     socket.on('instruction', function (message) {
         const instruction = message.instruction;
+        console.log(`received instruction ${instruction}`)
         switch (instruction) {
             case 'SPLASH':
-                currentDisplayState = 'SPLASH'
+                window.currentDisplayState = 'SPLASH'
                 updateDisplay()
                 break;
             case 'KEYPAD':
-                currentDisplayState = 'KEYPAD'
+                window.currentDisplayState = 'KEYPAD'
                 startCountDown()
                 updateDisplay()
                 break;
             case 'END_GAME':
-                currentDisplayState = 'END_GAME'
+                window.currentDisplayState = 'END_GAME'
                 updateDisplay()
                 break;
             default:
@@ -31,19 +32,19 @@ $(document).ready(function () {
         }
     });
 
-    let currentDisplayState = 'CHOOSE_TEAM'
+    window.currentDisplayState = 'CHOOSE_TEAM'
     updateDisplay()
 
     register = function (teamNumber) {
         $("#team-number").html(`Team ${teamNumber}`)
         socket.emit('register', { team: teamNumber })
-        currentDisplayState = 'SPLASH'
+        window.currentDisplayState = 'SPLASH'
         updateDisplay()
     }
 
     submit = function(submittedNumber) {
         socket.emit('submit', { submittedNumber: submittedNumber })
-        currentDisplayState = 'SPLASH'
+        window.currentDisplayState = 'SPLASH'
         updateDisplay()
     }
 
@@ -56,15 +57,25 @@ $(document).ready(function () {
             $("#countdown").html(seconds)
 
             if (distance <= 0) {
+                console.log('countdown over')
+                console.log('window.currentDisplayState', window.currentDisplayState)
+                if (window.currentDisplayState != 'SPLASH') {
+                    console.log('random number submitted')
+                    submit(generateRandomSubmission())
+                }
                 clearInterval(interval);
                 $("#countdown").html('Add Em Up')
             }
         }, 950); //make it a little bit faster just to be safe
     }
 
+    function generateRandomSubmission() {
+        return Math.floor(Math.random() * 6) + 1 
+    }
+
     function updateDisplay() {
         hideAllDivs()
-        switch (currentDisplayState) {
+        switch (window.currentDisplayState) {
             case 'CHOOSE_TEAM':
                 $("#login-buttons").show()
                 break;
