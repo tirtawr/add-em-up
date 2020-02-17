@@ -53,7 +53,7 @@ $(document).ready(function () {
                         )
                     } else {
                         $(`#submission-text-${teamIndex}-${turnIndex}-${playerIndex}`).html(
-                            '?'
+                            ' '
                         )
                     }
                     
