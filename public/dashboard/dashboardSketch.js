@@ -65,48 +65,19 @@ $(document).ready(function () {
     function getStars(points) {
         switch (points) {
             case 0:
-                return '☆☆☆☆☆';
+                return '☆☆☆☆';
             case 1:
-                return '★☆☆☆☆';
+                return '★☆☆☆';
             case 2:
-                return '★★☆☆☆';
+                return '★★☆☆';
             case 3:
-                return '★★★☆☆';
+                return '★★★☆';
             case 4:
-                return '★★★★☆';
-            case 5:
-                return '★★★★★';
+                return '★★★★';
             default:
-                return '☆☆☆☆☆';
+                return '☆☆☆☆';
         }
     }
-
-    // function updateDisplay() {
-    //     hideAllDivs()
-    //     switch (currentDisplayState) {
-    //         case 'CHOOSE_TEAM':
-    //             $("#login-buttons").show()
-    //             break;
-    //         case 'KEYPAD':
-    //             $("#keypad").show()
-    //             break;
-    //         case 'SPLASH':
-    //             $("#splash-text").show()
-    //             break;
-    //         case 'END_GAME':
-    //             $("#game-over-text").show()
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
-
-    // function hideAllDivs() {
-    //     $("#login-buttons").hide()
-    //     $("#keypad").hide()
-    //     $("#splash-text").hide()
-    //     $("#game-over-text").hide()
-    // }
 
     setInterval(refreshStatusReport, 100);
 

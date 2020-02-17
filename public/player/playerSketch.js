@@ -47,7 +47,7 @@ $(document).ready(function () {
     }
 
     function startCountDown() {
-        let distance = 5000;
+        let distance = 7000;
         $("#countdown").html(5)
         let interval = setInterval(() => {
             distance -= 1000
