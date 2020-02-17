@@ -57,6 +57,24 @@ class GameService {
         this.currentStage = 'END_GAME'
     }
 
+    resetGame() {
+        this.currentStage = 'IDLE'
+        this.currentTotalTurn = 0
+        this.scores = {
+            team_1: 0,
+            team_2: 0,
+            team_3: 0
+        }
+        for (const playerId in this.players) {
+            if (this.players.hasOwnProperty(playerId)) {
+                const player = this.players[playerId];
+                player.submissions = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+                
+            }
+        }
+
+    }
+
     startTurn(callback) {
         this.currentStage = 'KEYPAD'
         this.currentTotalTurn++

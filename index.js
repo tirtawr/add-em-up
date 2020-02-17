@@ -61,6 +61,12 @@ adminSockets.on('connection', function (adminSocket) {
 					instruction: 'END_GAME'
 				});
 				break;
+			case 'RESET_GAME':
+				gameService.endGame()
+				playerSockets.emit('instruction', {
+					instruction: 'RESET_GAME'
+				});
+				break;
 			case 'START_TURN':
 				playerSockets.emit('instruction', {
 					instruction: 'KEYPAD'
