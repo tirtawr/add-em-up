@@ -35,6 +35,7 @@ $(document).ready(function () {
     updateDisplay()
 
     register = function (teamNumber) {
+        $("#team-number").html(`Team ${teamNumber}`)
         socket.emit('register', { team: teamNumber })
         currentDisplayState = 'SPLASH'
         updateDisplay()
