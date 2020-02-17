@@ -3,7 +3,19 @@ $(document).ready(function () {
     let socket = io('/dashboard')
 
     socket.on('status-response', function (status) {
-        window.gameState = status
+        if (window.gameStatus 
+            && window.gameStatus['current_stage'] != 'KEYPAD' 
+            && status['current_stage'] == 'KEYPAD') {
+            const turnStart = document.getElementById("turnStart")
+            turnStart.play()
+        }
+        if (window.gameStatus 
+            && window.gameStatus['current_stage'] != 'END_GAME' 
+            && status['current_stage'] == 'END_GAME') {
+            const gameOver = document.getElementById("gameOver")
+            gameOver.play()
+        }
+        window.gameStatus = status
         updateDisplayWithStatus(status)
     })
 
@@ -85,7 +97,11 @@ $(document).ready(function () {
         // Play background music
         const backgroundMusic = document.getElementById("backgroundMusic")
         backgroundMusic.loop = true
-        backgroundMusic.play()
+        if(backgroundMusic.paused) {
+            backgroundMusic.play()
+        } else {
+            backgroundMusic.pause()
+        }
     }
 });
 
