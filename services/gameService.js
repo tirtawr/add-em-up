@@ -5,9 +5,9 @@ class GameService {
         this.currentStage = 'IDLE'
         this.currentTotalTurn = 0
         this.scores = {
-            1: 0,
-            2: 0,
-            3: 0
+            team_1: 0,
+            team_2: 0,
+            team_3: 0
         }
         this.TURN_DURATION = 5000
         this.MAX_TURNS_PER_ROUND = 3
@@ -33,7 +33,7 @@ class GameService {
     }
 
     adjustScore(teamNumber, amount) {
-        this.scores[teamNumber] += amount
+        this.scores[`team_${teamNumber}`] += amount
     }
 
     register(player) {

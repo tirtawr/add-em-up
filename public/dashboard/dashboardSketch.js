@@ -28,7 +28,7 @@ $(document).ready(function () {
 
         // Update team stars
         for (let i = 1; i <= 3; i++) {
-            $(`#point-text-${i}`).html(getStars(status['scores'][i]))
+            $(`#point-text-${i}`).html(getStars(status['scores'][`team_${i}`]))
         }
 
         // Update team running su,
