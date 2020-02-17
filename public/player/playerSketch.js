@@ -49,9 +49,11 @@ $(document).ready(function () {
     }
 
     function startCountDown() {
-        let distance = 7000;
+        let distance = 7000
         $("#countdown").html(5)
         let interval = setInterval(() => {
+            const tickSound = document.getElementById("tickSound")
+            tickSound.play()
             distance -= 1000
             const seconds = Math.floor(distance / 1000);
             $("#countdown").html(seconds)
