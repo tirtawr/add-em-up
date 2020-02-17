@@ -11,10 +11,11 @@ class GameService {
         }
         this.TURN_DURATION = 5000
         this.MAX_TURNS_PER_ROUND = 3
+        this.POSSIBLE_TARGETS = [13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109]
 
-        var shuffle = function (array) {
-            var currentIndex = array.length
-            var temporaryValue, randomIndex
+        let shuffle = function (array) {
+            let currentIndex = array.length
+            let temporaryValue, randomIndex
             // While there remain elements to shuffle...
             while (0 !== currentIndex) {
                 // Pick a remaining element...
@@ -28,8 +29,7 @@ class GameService {
             return array
         }
 
-        const possibleTargets = [13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109]
-        this.targets = shuffle(possibleTargets)
+        this.targets = shuffle(this.POSSIBLE_TARGETS)
     }
 
     adjustScore(teamNumber, amount) {
