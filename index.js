@@ -33,7 +33,7 @@ playerSockets.on('connection', function (playerSocket) {
 	})
 })
 
-// Admin Socket
+// Dashboard Socket
 let dashboardSockets = io.of('/dashboard')
 dashboardSockets.on('connection', function (dashboardSocket) {
 	console.log('An dashboard client connected: ' + dashboardSocket.id)
